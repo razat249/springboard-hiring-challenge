@@ -23,18 +23,35 @@ class Homepage extends Component {
     }
   }
 
+  filterData(query) {
+    let newData = this.reserve.filter(element => {
+      let n = element.tags.search(query)
+      if (n === -1) {
+        return false
+      } else {
+        return true
+      }
+    })
+
+    this.setState({
+      data: newData
+    })
+  }
+
   componentDidMount() {
     const self = this
     // Make a request to the api.
     axios.get('https://hackerearth.0x10.info/api/learning-paths?type=json&query=list_paths')
-      .then(function (response) {
-        console.log(response.data.paths);
+      .then(response => {
         self.setState({
           data: response.data.paths
         })
+        self.reserve = response.data.paths;
+        console.log(self.reserve);
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error);
+        window.alert("Something went wrong! try reloading")
       });
   }
 
@@ -42,7 +59,7 @@ class Homepage extends Component {
     let arr = [];
     for (let i = 0; i < this.state.data.length; i++) {
       arr.push(
-        <a href="#" key={ i } className="list-group-item col-md-4" style={ HomepageStyle.list }>
+        <a href="#" key={i} className="list-group-item col-md-3" style={ HomepageStyle.list }>
           <InfoCard>{ this.state.data[i] }</InfoCard>
         </a>
       );
@@ -51,7 +68,7 @@ class Homepage extends Component {
     return (
       <div className="container">
         <div style={ HomepageStyle.search }>
-          <Search />
+          <Search filterData={ this.filterData.bind(this) }/>
         </div>
         <div className="text-center" style={ HomepageStyle.loading }>
           <h4>{this.state.data ? '' : 'Loading...'}</h4>
