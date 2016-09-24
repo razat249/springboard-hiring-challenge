@@ -1,6 +1,6 @@
 ## Learning Hub
 This app is build during the coding challange round organised by Springboard. This app is built using ReactJS. I have used `create-react-app` command line tool developed by members of Facebook to bootstrap the initial boiler plate for the App.
-> This app is running online at TODO
+> This app is running live at https://test-40884.firebaseapp.com/
 
 ### Technologies Used/Needed
  - ReactJS
@@ -11,6 +11,7 @@ This app is build during the coding challange round organised by Springboard. Th
  - Node.js @ `6.6.0`
  - `create-react-app` command line tool
  - `eslint` for linting code
+ - firebase for hosting
 
 ### How to Run
 - extract the archive
@@ -26,4 +27,4 @@ This app is build during the coding challange round organised by Springboard. Th
 
 
   [1]: https://d320jcjashajb2.cloudfront.net/media/uploads/f9aba19.png
-  [2]:https://d320jcjashajb2.cloudfront.net/media/uploads/1f5c3ee.png### Some Screenshots
+  [2]: https://d320jcjashajb2.cloudfront.net/media/uploads/1f5c3ee.png
