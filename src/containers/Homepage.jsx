@@ -71,6 +71,7 @@ class Homepage extends Component {
 
     return (
       <div className="container">
+
         <div style={ HomepageStyle.search }>
           <Search filterData={ this.filterData.bind(this) }/>
         </div>
@@ -82,6 +83,19 @@ class Homepage extends Component {
           <div className="list-group row">{ arr }</div>
           : ''
         }
+
+        <hr />
+        <p className="text-center">Have a look at my
+          <strong><a href="https://www.github.com/razat249" target="_blanck"> Github </a></strong>
+          and
+          <strong><a href="https://in.linkedin.com/in/rajatpatkar"> LinkedIn </a></strong>
+          Profiles
+        </p>
+        <h4 className="text-center"><small>Made by Rajat Patwa</small></h4>
+        <br />
+        <br />
+
+
       </div>
     );
   }
