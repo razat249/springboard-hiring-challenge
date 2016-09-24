@@ -5,13 +5,15 @@ import axios from "axios";
 
 const HomepageStyle = {
   search: {
-    'margin': '65px 0 15px 0',
+    'margin': '65px 0 0 0',
   },
   loading: {
     'color': 'grey',
   },
   list: {
-    'margin': '0 15px 15px 15px',
+    'margin': '15px auto',
+    'height': '500px',
+    'width': '330px',
   },
 }
 
@@ -59,9 +61,11 @@ class Homepage extends Component {
     let arr = [];
     for (let i = 0; i < this.state.data.length; i++) {
       arr.push(
-        <a href="#" key={i} className="list-group-item col-md-3" style={ HomepageStyle.list }>
-          <InfoCard>{ this.state.data[i] }</InfoCard>
-        </a>
+        <div className="col-md-4">
+          <li href="#" key={i} className="list-group-item" style={ HomepageStyle.list }>
+            <InfoCard>{ this.state.data[i] }</InfoCard>
+          </li>
+        </div>
       );
     }
 
