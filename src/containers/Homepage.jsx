@@ -42,7 +42,7 @@ class Homepage extends Component {
     let arr = [];
     for (let i = 0; i < this.state.data.length; i++) {
       arr.push(
-        <a href="#" className="list-group-item col-md-4" style={ HomepageStyle.list }>
+        <a href="#" key={ i } className="list-group-item col-md-4" style={ HomepageStyle.list }>
           <InfoCard>{ this.state.data[i] }</InfoCard>
         </a>
       );
